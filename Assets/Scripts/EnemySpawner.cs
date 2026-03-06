@@ -73,6 +73,8 @@ public class EnemySpawner : MonoBehaviour
 
             Vector3 pos = GetValidSpawnPosition();
             var pooled = pool.Get();
+            // pooled.gameObject.hideFlags = HideFlags.HideInHierarchy;
+
             pooled.transform.position = pos;
             pooled.OnSpawned(pos);
 
@@ -94,6 +96,7 @@ public class EnemySpawner : MonoBehaviour
 
             Vector3 pos = GetValidSpawnPosition();
             GameObject enemy = Instantiate(enemyPrefab, pos, Quaternion.identity);
+            // enemy.hideFlags = HideFlags.HideInHierarchy;
 
             if (enemy.GetComponent<EnemyIndexer>() == null)
                 enemy.AddComponent<EnemyIndexer>();

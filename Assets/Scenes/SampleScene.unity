@@ -377,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1095885445
 Transform:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6283659106245445352, guid: 53b62a3fa57ca4b4bbfaf6052a7b6e9e, type: 3}
-  enemyCount: 10000
+  enemyCount: 2000
   usePooling: 1
   minDistanceBetweenEnemies: 1.5
   spawnArea: {x: 200, y: 200}
@@ -428,7 +428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1852199059
 MonoBehaviour:
   m_ObjectHideFlags: 0

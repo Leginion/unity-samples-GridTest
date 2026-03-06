@@ -65,6 +65,6 @@ public class Player : MonoBehaviour
             ei.SetIndexed(true);
         }
 
-        Debug.Log($"Player附近已索引Enemy: {nearby.Count} (radius={radius:F1})");
+        // Debug.Log($"Player附近已索引Enemy: {nearby.Count} (radius={radius:F1})");
     }
 }
