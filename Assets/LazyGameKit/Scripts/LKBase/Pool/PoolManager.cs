@@ -35,7 +35,7 @@ namespace LazyGameKit.Base.Pool
                 maxSize: maxSize
             );
 
-            Debug.Log($"[EnemySpawner] 对象池初始化完成，容量：{initialSize} ~ {maxSize}");
+            Debug.Log($"[PoolManager] 对象池初始化完成，容量：{initialSize} ~ {maxSize}");
 
             return pool;
         }

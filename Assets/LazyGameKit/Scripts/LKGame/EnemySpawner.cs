@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-using LazyGameKit.Core;
 using LazyGameKit.Base.Pool;
-using LazyGameKit.Base.Grid;
 using LazyGameKit.Base.SpawnBounds;
 
 namespace LazyGameKit.Game
@@ -12,24 +10,16 @@ namespace LazyGameKit.Game
     {
         [Header("Generation Setting")]
         public int enemyCount = 1000;
-        public bool usePooling = true;
 
         [Header("RectBounds Setting")]
         [SerializeField] private RectBounds rectBounds;
 
         private void Start()
         {
-            if (usePooling)
-            {
-                StartCoroutine(SpawnWithPooling());
-            }
-            else
-            {
-                StartCoroutine(SpawnWithoutPooling());
-            }
+            StartCoroutine(Spawn());
         }
 
-        private IEnumerator SpawnWithPooling()
+        private IEnumerator Spawn()
         {
             var pool = PoolManager.Instance.GetEnemyPool();
 
@@ -42,29 +32,9 @@ namespace LazyGameKit.Game
 
                 pooled.transform.position = pos;
                 pooled.OnSpawned(pos);
-
-                if (TryGetComponent<EnemyIndexer>(out var indexer)) {
-                    GridManager.Instance.Add(indexer);
-                }
             }
 
-            Debug.Log($"[EnemySpawner] 使用对象池生成 {enemyCount} 个敌人完成");
-        }
-
-        private IEnumerator SpawnWithoutPooling()
-        {
-            for (int i = 0; i < enemyCount; i++)
-            {
-                if (i % 1000 == 0 && i > 0) yield return null;
-
-                Vector3 pos = rectBounds.GetValidPosition();
-                GameObject enemy = Instantiate(enemyPrefab, pos, Quaternion.identity);
-
-                if (enemy.GetComponent<EnemyIndexer>() == null)
-                    enemy.AddComponent<EnemyIndexer>();
-            }
-
-            Debug.Log($"[EnemySpawner] 普通 Instantiate 生成 {enemyCount} 个敌人完成");
+            Debug.Log($"[EnemySpawner] 生成 {enemyCount} 个敌人完成");
         }
     }
 
