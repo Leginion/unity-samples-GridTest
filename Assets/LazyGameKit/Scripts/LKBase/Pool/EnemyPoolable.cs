@@ -23,20 +23,14 @@ namespace LazyGameKit.Base.Pool
             transform.rotation = Quaternion.identity;
             gameObject.SetActive(true);
 
-            // TODO -> to Generic
-            // 示例：重置组件状态
-            var indexer = GetComponent<EnemyIndexer>();
-            if (indexer != null)
-            {
-                indexer.isIndexed = false;
-                // 如果有其他状态，也在这里重置
-            }
+            ExtraAction_OnSpawned();
         }
 
         public void OnDespawned()
         {
             gameObject.SetActive(false);
-            // 可在这里清理引用、粒子等
+
+            ExtraAction_OnDespawned();
         }
 
         public void ReturnToPool()
@@ -49,6 +43,20 @@ namespace LazyGameKit.Base.Pool
             {
                 Destroy(gameObject);
             }
+        }
+
+        void ExtraAction_OnSpawned()
+        {
+            var indexer = GetComponent<EnemyIndexer>();
+            if (indexer != null)
+            {
+                indexer.isIndexed = false;
+                // 如果有其他状态，也在这里重置
+            }
+        }
+
+        void ExtraAction_OnDespawned()
+        {
         }
     }
 }

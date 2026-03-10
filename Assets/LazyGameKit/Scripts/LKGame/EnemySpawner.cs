@@ -10,14 +10,14 @@ namespace LazyGameKit.Game
 
     public class EnemySpawner : MonoBehaviour
     {
-        [Header("生成参数")]
+        [Header("Generation Settings")]
         public GameObject enemyPrefab;
         public int enemyCount = 1000;
         public bool usePooling = true;
         public float minDistanceBetweenEnemies = 1.5f;
         public Vector2 spawnArea = new Vector2(200f, 200f);
 
-        [Header("Pooling 设置")]
+        [Header("Pooling Settings")]
         [SerializeField] private int poolInitialSize = 100;
         [SerializeField] private int poolMaxSize = 200000;
 

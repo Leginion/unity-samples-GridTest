@@ -50,7 +50,7 @@ namespace LazyGameKit.Base.Grid
             if (list != null && list.Count == 0) grid.Remove(key);
         }
 
-        public void UpdatePosition(EnemyIndexer ei, Vector3 oldPosition)
+        public void UpdatePositionCache(EnemyIndexer ei, Vector3 oldPosition)
         {
             Vector2Int oldKey = GetGridKey(oldPosition);
             Vector2Int newKey = GetGridKey(ei.transform.position);

@@ -8,20 +8,20 @@ namespace LazyGameKit.Base.Grid
         [Header("Indexing State")]
         public bool isIndexed = false;
 
-        private Vector3 lastPosition; // position cache
+        private Vector3 positionCache; // last position
 
         private void Start()
         {
             GridManager.Instance.Add(this);
-            lastPosition = transform.position;
+            positionCache = transform.position;
         }
 
         private void Update()
         {
-            if (Vector3.Distance(transform.position, lastPosition) > 0.01f)
+            if (Vector3.Distance(transform.position, positionCache) > 0.01f)
             {
-                GridManager.Instance.UpdatePosition(this, lastPosition);
-                lastPosition = transform.position;
+                GridManager.Instance.UpdatePositionCache(this, positionCache);
+                positionCache = transform.position;
             }
         }
 

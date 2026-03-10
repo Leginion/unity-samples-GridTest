@@ -66,7 +66,7 @@ namespace LazyGameKit.Base.Pool
         {
             if (collectionCheck && pool.Count > 0 && pool.Contains(obj))
             {
-                Debug.LogWarning("试图重复释放同一个对象到池中，已忽略");
+                Debug.LogWarning("ignored a duplicated object pool release");
                 return;
             }
 
