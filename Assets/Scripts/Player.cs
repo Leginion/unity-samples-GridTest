@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+using LazyKnight.Grid;
+
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
