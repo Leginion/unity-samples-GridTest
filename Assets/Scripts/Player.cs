@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-using LazyKnight.Grid;
+using LazyGameKit.Base.Grid;
 
 public class Player : MonoBehaviour
 {

@@ -1,14 +1,14 @@
 using UnityEngine;
 
-namespace LazyKnight.Grid
+namespace LazyGameKit.Base.Grid
 {
 
     public class EnemyIndexer : MonoBehaviour
     {
-        [Header("索引状态")]
+        [Header("Indexing State")]
         public bool isIndexed = false;
 
-        private Vector3 lastPosition;
+        private Vector3 lastPosition; // position cache
 
         private void Start()
         {

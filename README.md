@@ -1,11 +1,5 @@
 ### Enemy Indexer
 
-* GridManager -> 更新实例索引
-* 实时缓存Enemy实例坐标位置
-* Gizmo (Debug) 状态反馈
-
-
-
 | Module              | Description                                                  | Note |
 | ------------------- | ------------------------------------------------------------ | ---- |
 | EnemyIndexer        | update **Instance Index** of Enemy (Grid Manager).<br />update **Instance Position Cache** of Enemy.<br />**Render Gizmos** for debug purpose. |      |

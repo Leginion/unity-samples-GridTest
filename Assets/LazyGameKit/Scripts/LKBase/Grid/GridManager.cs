@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LazyKnight.Grid
+namespace LazyGameKit.Base.Grid
 {
 
     public class GridManager : MonoBehaviour

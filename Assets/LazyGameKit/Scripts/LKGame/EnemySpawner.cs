@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-using LazyKnight.Core;
-using LazyKnight.Pool;
-using LazyKnight.Grid;
+using LazyGameKit.Core;
+using LazyGameKit.Base.Pool;
+using LazyGameKit.Base.Grid;
 
-namespace LazyKnight.Game
+namespace LazyGameKit.Game
 {
 
     public class EnemySpawner : MonoBehaviour

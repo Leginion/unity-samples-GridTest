@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace LazyKnight.Core
+namespace LazyGameKit.Core
 {
 
     static class Utils

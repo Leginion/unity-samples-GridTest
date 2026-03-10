@@ -3,10 +3,10 @@ using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-using LazyKnight.Core;
-using LazyKnight.Game;
-using LazyKnight.Grid;
-using LazyKnight.Pool;
+using LazyGameKit.Core;
+using LazyGameKit.Game;
+using LazyGameKit.Base.Grid;
+using LazyGameKit.Base.Pool;
 
 public class TestGridPerformance : MonoBehaviour
 {

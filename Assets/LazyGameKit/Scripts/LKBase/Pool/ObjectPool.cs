@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LazyKnight.Pool
+namespace LazyGameKit.Base.Pool
 {
 
     public class ObjectPool<T> where T : Component
@@ -11,8 +11,8 @@ namespace LazyKnight.Pool
         private readonly Action<T> onGet;
         private readonly Action<T> onRelease;
         private readonly Action<T> onDestroyPoolObject;
-        private readonly bool collectionCheck;
-        private readonly int defaultCapacity;
+        private readonly bool collectionCheck; // check duplication on release object
+        private readonly int defaultCapacity; // initial capacity, heat on game start
         private readonly int maxSize;
 
         private readonly Queue<T> pool = new Queue<T>();
