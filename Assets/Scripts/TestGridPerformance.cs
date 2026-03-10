@@ -59,10 +59,7 @@ public class TestGridPerformance : MonoBehaviour
 
         GameObject spawnerGO = new GameObject("EnemySpawner");
         EnemySpawner spawner = spawnerGO.AddComponent<EnemySpawner>();
-        spawner.enemyPrefab = enemyPrefab;
         spawner.enemyCount = n;
-        // spawner.spawnArea = new Vector2(200f, 200f); // TODO
-        spawner.usePooling = useSpawnerPooling;
 
         Stopwatch swInsert = new Stopwatch();
         swInsert.Start();
