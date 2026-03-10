@@ -51,7 +51,7 @@ namespace LazyGameKit.Base.Factory
         {
             var pooled = _pool.Get();
             pooled.transform.position = position;
-            pooled.gameObject.SetActive(true);
+            pooled.gameObject.SetActive(false);
 
             return pooled;
         }
