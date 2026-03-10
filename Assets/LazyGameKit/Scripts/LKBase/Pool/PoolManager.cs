@@ -7,7 +7,17 @@ namespace LazyGameKit.Base.Pool
 {
     class PoolManager : MonoBehaviour
     {
-        public static PoolManager Instance { get { return _Instance; } }
+        public static PoolManager Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    Debug.LogError("not found PoolManager instance!");
+                }
+                return _Instance;
+            }
+        }
         private static PoolManager _Instance;
 
         private ObjectPool<EnemyPoolable> enemyPool;
