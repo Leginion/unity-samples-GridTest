@@ -13,10 +13,10 @@ namespace LazyGameKit.Base.Grid
         [SerializeField] private bool showGridGizmos = true;
         [SerializeField] private float gizmoRange = 50f;
 
-        public Dictionary<Vector2Int, List<EnemyIndexer>> grid = new Dictionary<Vector2Int, List<EnemyIndexer>>();
-        private List<EnemyIndexer> allEnemies = new List<EnemyIndexer>();
+        public Dictionary<Vector2Int, List<GridObjectIndexer>> grid = new Dictionary<Vector2Int, List<GridObjectIndexer>>();
+        private List<GridObjectIndexer> allEnemies = new List<GridObjectIndexer>();
         private Vector2 halfWorldSize;
-        public List<EnemyIndexer> AllEnemies => allEnemies;
+        public List<GridObjectIndexer> AllEnemies => allEnemies;
 
         private void Awake()
         {
@@ -33,16 +33,16 @@ namespace LazyGameKit.Base.Grid
             return new Vector2Int(x, y);
         }
 
-        public void Add(EnemyIndexer ei)
+        public void Add(GridObjectIndexer ei)
         {
             if (ei == null || ei.gameObject.tag != "Enemy") return;
             Vector2Int key = GetGridKey(ei.transform.position);
-            if (!grid.ContainsKey(key)) grid[key] = new List<EnemyIndexer>();
+            if (!grid.ContainsKey(key)) grid[key] = new List<GridObjectIndexer>();
             if (!grid[key].Contains(ei)) grid[key].Add(ei);
             if (!allEnemies.Contains(ei)) allEnemies.Add(ei);
         }
 
-        public void Remove(EnemyIndexer ei)
+        public void Remove(GridObjectIndexer ei)
         {
             Vector2Int key = GetGridKey(ei.transform.position);
             if (grid.TryGetValue(key, out var list)) list.Remove(ei);
@@ -50,7 +50,7 @@ namespace LazyGameKit.Base.Grid
             if (list != null && list.Count == 0) grid.Remove(key);
         }
 
-        public void UpdatePositionCache(EnemyIndexer ei, Vector3 oldPosition)
+        public void UpdatePositionCache(GridObjectIndexer ei, Vector3 oldPosition)
         {
             Vector2Int oldKey = GetGridKey(oldPosition);
             Vector2Int newKey = GetGridKey(ei.transform.position);
@@ -61,9 +61,9 @@ namespace LazyGameKit.Base.Grid
             }
         }
 
-        public List<EnemyIndexer> QueryNearby(Vector3 position, float radius)
+        public List<GridObjectIndexer> QueryNearby(Vector3 position, float radius)
         {
-            List<EnemyIndexer> result = new List<EnemyIndexer>();
+            List<GridObjectIndexer> result = new List<GridObjectIndexer>();
             Vector2Int centerKey = GetGridKey(position);
             int range = Mathf.CeilToInt(radius / cellSize) + 1;
 

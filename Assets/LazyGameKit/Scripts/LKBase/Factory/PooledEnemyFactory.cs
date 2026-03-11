@@ -40,8 +40,8 @@ namespace LazyGameKit.Base.Factory
             poolable.SetOwningPool(_pool);
 
             // attach indexer
-            if (go.GetComponent<EnemyIndexer>() == null)
-                go.AddComponent<EnemyIndexer>();
+            if (go.GetComponent<GridObjectIndexer>() == null)
+                go.AddComponent<GridObjectIndexer>();
 
             // initial active state
             go.SetActive(false);

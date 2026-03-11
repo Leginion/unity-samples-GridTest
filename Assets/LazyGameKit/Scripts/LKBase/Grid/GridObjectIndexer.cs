@@ -3,7 +3,7 @@ using UnityEngine;
 namespace LazyGameKit.Base.Grid
 {
 
-    public class EnemyIndexer : MonoBehaviour
+    public class GridObjectIndexer : MonoBehaviour
     {
         [Header("Indexing State")]
         public bool isIndexed = false;

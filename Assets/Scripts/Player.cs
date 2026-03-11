@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             ei.SetIndexed(false);
         }
 
-        List<EnemyIndexer> nearby = GridManager.Instance.QueryNearby(transform.position, radius);
+        List<GridObjectIndexer> nearby = GridManager.Instance.QueryNearby(transform.position, radius);
         foreach (var ei in nearby)
         {
             ei.SetIndexed(true);

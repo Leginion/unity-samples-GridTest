@@ -19,7 +19,7 @@ Goto `GridManager.QueryNearby` to explore more.
 | Core                | Utils               |                                                              |
 | Base.Factory        | PooledEnemyFactory  |                                                              |
 | Base.PrefabProvider | EnemyPrefabProvider | work with **Spawner**.<br />provide **EnemyPrefab** rule.    |
-| Base.Grid           | EnemyIndexer        | update **Instance Index** of Enemy (Grid Manager).<br />update **Instance Position Cache** of Enemy.<br />**Render Gizmos** for debug purpose. |
+| Base.Grid           | GridObjectIndexer        | update **Instance Index** of Enemy (Grid Manager).<br />update **Instance Position Cache** of Enemy.<br />**Render Gizmos** for debug purpose. |
 | Base.Grid           | GridManager         | Add/Remove Indexer → Maintain a instance link.<br />calculate **Grid Key**.<br />can maintain **Instance Position**.<br />use **QueryNearby** to find enemies.<br />**Render Gizmos** for debug purpose. |
 | Base.Pool           | EnemyPoolable       | use to mark a specific GO as **Poolable Object**.<br />specific for **Enemy Object**. |
 | Base.Pool           | ObjectPool          | A simple **ObjectPool** implementation.                      |

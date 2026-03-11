@@ -48,7 +48,7 @@ namespace LazyGameKit.Base.Pool
         void ExtraAction_OnSpawned()
         {
             // reset index state
-            if (TryGetComponent<EnemyIndexer>(out var indexer))
+            if (TryGetComponent<GridObjectIndexer>(out var indexer))
             {
                 indexer.isIndexed = false;
             }
