@@ -17,7 +17,7 @@ namespace MyGame
 
         void ITickable.Tick()
         {
-            helloWorldService.Hello();
+            // helloWorldService.Hello();
         }
     }
 }

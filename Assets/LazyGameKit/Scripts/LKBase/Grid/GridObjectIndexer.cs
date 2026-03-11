@@ -30,6 +30,13 @@ namespace LazyGameKit.Base.Grid
             GridManager.Instance.Remove(this);
         }
 
+        public void SetIndexed(bool state)
+        {
+            isIndexed = state;
+        }
+
+        #if DEBUG_GIZMOS_GRID
+
         private void OnDrawGizmos()
         {
             Gizmos.color = isIndexed ? Color.green : Color.red;
@@ -43,10 +50,7 @@ namespace LazyGameKit.Base.Grid
             UnityEditor.Handles.Label(transform.position + Vector3.forward * 3f, isIndexed ? "已索引" : "未索引");
         }
 
-        public void SetIndexed(bool state)
-        {
-            isIndexed = state;
-        }
+        #endif
     }
 
 }

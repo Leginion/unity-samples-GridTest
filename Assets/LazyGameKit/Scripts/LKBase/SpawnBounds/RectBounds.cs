@@ -41,6 +41,7 @@ namespace LazyGameKit.Base.SpawnBounds
         }
 
         #region Debug - Gizmos
+        #if DEBUG_GIZMOS_GRID
 
         private void OnDrawGizmos()
         {
@@ -74,6 +75,7 @@ namespace LazyGameKit.Base.SpawnBounds
             Gizmos.DrawCube(center, Vector3.one * 0.4f);
         }
 
+        #endif
         #endregion
     }
 }
