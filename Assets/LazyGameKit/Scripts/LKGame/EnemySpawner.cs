@@ -14,24 +14,29 @@ namespace LazyGameKit.Game
         [Header("RectBounds Setting")]
         [SerializeField] private RectBounds rectBounds;
 
+        private ObjectPool<EnemyPoolable> enemyPool;
+
         private void Start()
         {
-            StartCoroutine(Spawn());
+            enemyPool = PoolManager.Instance.GetEnemyPool();
+            StartCoroutine(RequestBatchSpawn(enemyCount, 1000));
         }
 
-        private IEnumerator Spawn()
+        private void SpawnSingle()
         {
-            var pool = PoolManager.Instance.GetEnemyPool();
+            Vector3 pos = rectBounds.GetValidPosition();
+            var pooled = enemyPool.Get();
 
+            pooled.transform.position = pos;
+            pooled.OnSpawned(pos);
+        }
+
+        private IEnumerator RequestBatchSpawn(int enemyCount, int restGap)
+        {
             for (int i = 0; i < enemyCount; i++)
             {
-                if (i % 2000 == 0 && i > 0) yield return null;
-
-                Vector3 pos = rectBounds.GetValidPosition();
-                var pooled = pool.Get();
-
-                pooled.transform.position = pos;
-                pooled.OnSpawned(pos);
+                if (i % restGap == 0 && i > 0) yield return null;
+                SpawnSingle();
             }
 
             Debug.Log($"[EnemySpawner] 生成 {enemyCount} 个敌人完成");
