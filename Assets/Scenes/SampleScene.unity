@@ -667,6 +667,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCount: 10000
   rectBounds: {fileID: 120296826}
+--- !u!1 &1299208384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1299208385}
+  m_Layer: 0
+  m_Name: ===== SPAWNER =====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1299208385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299208384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622157684
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,11 +850,12 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 242617695}
   - {fileID: 1031545722}
-  - {fileID: 1095885445}
   - {fileID: 1931414240}
   - {fileID: 1622157685}
   - {fileID: 718243929}
   - {fileID: 315554616}
+  - {fileID: 1299208385}
+  - {fileID: 1095885445}
   - {fileID: 369441937}
   - {fileID: 666673541}
   - {fileID: 2072847758}
