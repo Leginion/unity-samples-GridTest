@@ -85,6 +85,8 @@ namespace LazyGameKit.Base.Grid
             return result;
         }
 
+        #if DEBUG_GIZMOS_GRID
+
         private void OnDrawGizmos()
         {
             if (!showGridGizmos) return;
@@ -127,6 +129,8 @@ namespace LazyGameKit.Base.Grid
                 Gizmos.DrawWireSphere(player.transform.position, player.Radius);
             }
         }
+
+        #endif
     }
 
 }
